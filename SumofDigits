@@ -1,0 +1,28 @@
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int TestCase = int.Parse(Console.ReadLine());
+		System.Int64[] sum = new System.Int64[TestCase];
+		
+		for(int i=0;i<TestCase;i++)
+		{
+		    string num = Console.ReadLine();
+		    int ln = num.Length;
+		    string[] nums =  new string[ln];
+		    for(int  j=0;j<ln;j++)
+		    {
+		        nums[j]=num.Substring(j,1);
+		        sum[i]=sum[i]+int.Parse(nums[j]);
+		    }
+		}
+		
+		    for(int j=0;j<TestCase;j++)
+		    {
+		        Console.WriteLine(sum[j]);
+		    }
+	}
+}
