@@ -1,0 +1,28 @@
+using System;
+
+namespace Test1
+{
+    class ATM_CodeChef
+    {
+
+        static void Main()
+        {
+            string[] nums = Console.ReadLine().Split(' ');
+            int n = int.Parse(nums[0]);
+            int k = int.Parse(nums[1]);
+            int count=0;
+            int[] t = new int[n];
+            for (int i=0;i<n;i++)
+            {
+                t[i] = int.Parse(Console.ReadLine());
+                if (t[i] % k == 0) 
+                {
+                    count = count+1;
+                }
+            }
+
+            Console.WriteLine(count);
+            
+         }
+    }
+}
