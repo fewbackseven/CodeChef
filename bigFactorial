@@ -1,0 +1,28 @@
+using System;
+using System.Numerics;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int TestCase = int.Parse(Console.ReadLine());
+		BigInteger[] Factorial = new BigInteger[TestCase];
+		
+		for(int i=0;i<TestCase;i++)
+		{
+		    int  num = int.Parse(Console.ReadLine());
+		    BigInteger Constant=1;
+		    for(int j=1;j<=num;j++)
+		    {
+		        Constant=Constant*j;
+		        Factorial[i]=Constant;
+		    }
+		}
+		
+		for(int i=0;i<TestCase;i++)
+		{
+		    Console.WriteLine(Factorial[i]);
+		}
+	}
+}
