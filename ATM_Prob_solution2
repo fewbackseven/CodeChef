@@ -1,0 +1,29 @@
+using System;
+
+namespace Test1
+{
+    class ATM_CodeChef
+    {
+
+        static void Main()
+        {
+            string[] num = Console.ReadLine().Split(" ");
+            float WtihdrawlAmnt = float.Parse(num[0]);
+            float Balance = float.Parse(num[1]);
+
+            if(WtihdrawlAmnt % 5 == 0 && WtihdrawlAmnt <= Balance-0.5f)
+            {
+                float finalBalance = Balance - WtihdrawlAmnt - 0.5f;
+                Console.WriteLine("{0:f2}", finalBalance);
+            }
+            else if(WtihdrawlAmnt>Balance)
+            {
+                Console.WriteLine("{0:f2}", Balance);
+            }
+            else
+            {
+                Console.WriteLine("{0:f2}", Balance);
+            }
+        }
+    }
+}
