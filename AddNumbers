@@ -1,0 +1,24 @@
+using System;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main()
+        {
+            int TstCases = int.Parse(Console.ReadLine());
+            int[] AddedNums = new int[TstCases];
+            
+            for(int i = 0; i<TstCases;i++)
+            {
+                string[] nums = Console.ReadLine().Split(' ');
+                AddedNums[i] = int.Parse(nums[0])+int.Parse(nums[1]);
+            }
+            
+            for(int j=0; j<TstCases;j++)
+            {
+                Console.WriteLine(AddedNums[j]);
+            }
+        }
+    }
+}
