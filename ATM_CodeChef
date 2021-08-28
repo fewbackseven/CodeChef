@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Test1
+{
+    class ATM_CodeChef
+    {
+        static void print1(double  i)
+        {
+            string decimalString = i.ToString();
+            decimalString = i.ToString("0.00");
+            Console.WriteLine(decimalString);
+        }
+
+        static void Main()
+        {
+            double WithDrawlAmnt;
+
+            do
+            {
+                WithDrawlAmnt = double.Parse(Console.ReadLine());
+
+                if(WithDrawlAmnt < 0 || WithDrawlAmnt > 2000.00)
+                      Console.WriteLine("Please enter amount to withdraw");
+                                 
+            } while (WithDrawlAmnt < 0 || WithDrawlAmnt > 2000.00);
+
+            double Bal;
+            do
+            {
+                Bal = double.Parse(Console.ReadLine());
+                if (Bal < 0 || Bal > 2000)                
+                    Console.WriteLine("Please enter valid account Balance");
+                
+            } while (Bal < 0 || Bal > 2000);
+
+            double check = 0;
+            check = WithDrawlAmnt % 5;
+                        
+
+            if (WithDrawlAmnt > Bal)
+            {
+                print1(Bal);                                
+            }
+           else if(check==0)
+            {
+                Bal = Bal - WithDrawlAmnt - 0.50;
+                print1(Bal);
+            }
+           else
+            {
+                print1(Bal);
+            }
+
+        }
+
+    }
+}
