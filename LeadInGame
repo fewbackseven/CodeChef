@@ -1,0 +1,52 @@
+using System;
+using System.Numerics;
+using System.Linq;
+
+
+public class ATM_CodeChef
+{
+    public static void Main()
+    {
+        //int rounds = int.Parse(Console.ReadLine());
+        //int P1Lead = 0, P2Lead = 0, k = 0;
+
+        //for(int i=0;i<rounds;i++)
+        //{
+        //    int[] nums = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        //    if (nums[0] > nums[1])
+        //        P1Lead = P1Lead + (nums[0] - nums[1]);
+        //    else
+        //        P2Lead = P2Lead + (nums[1] - nums[0]);            
+        //}
+
+        //if (P1Lead > P2Lead)
+        //    Console.WriteLine("1 {0}", P1Lead);
+        //else
+        //    Console.WriteLine("2 {0}", P2Lead);
+
+        //--------------*********************------------------------------------
+
+        int rounds = int.Parse(Console.ReadLine());
+        int[] Player1Lead = new int[rounds];
+        int[] player2Lead = new int[rounds];
+
+        for (int i = 0; i < rounds; i++)
+        {
+            int[] points = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            if (points[0] > points[1])            
+                Player1Lead[i] = points[0] - points[1];
+                            
+            else if (points[0] < points[1])            
+                player2Lead[i] = points[1] - points[0];                            
+        }
+
+        Array.Sort(Player1Lead);
+        Array.Sort(player2Lead);
+
+        if (Player1Lead[rounds - 1] < player2Lead[rounds - 1])
+            Console.WriteLine("2 {0}", player2Lead[rounds - 1].ToString());
+        else
+            Console.WriteLine("1 {0}", Player1Lead[rounds - 1].ToString());
+
+    } 
+}
