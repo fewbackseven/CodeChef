@@ -1,0 +1,26 @@
+using System;
+using System.Linq;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int TestCases = int.Parse(Console.ReadLine());
+		string[] result = new string[TestCases];
+
+		for(int i=0;i<TestCases;i++)
+        {
+			int[] angles = Console.ReadLine().Split().Select(int.Parse).ToArray();
+			if (angles[0] + angles[1] + angles[2] == 180)
+				result[i] = "YES";
+			else
+				result[i] = "NO";
+        }
+
+		for(int i=0;i<TestCases;i++)
+        {
+			Console.WriteLine(result[i]);
+        }
+	}
+}
