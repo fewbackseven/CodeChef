@@ -1,0 +1,29 @@
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int TestCases = int.Parse(Console.ReadLine());
+		string[] result = new string[TestCases];
+
+		for (int i = 0; i < TestCases; i++)
+		{
+			int num = int.Parse(Console.ReadLine());
+			if (num < 10)
+				result[i] = "Thanks for helping chef!";
+			else
+				result[i] = "-1";
+		}
+
+		for (int i = 0; i < TestCases; i++)
+		{
+			int a = 0;
+			if (int.TryParse(result[i], out a))
+				Console.WriteLine(a);
+			else
+				Console.WriteLine(result[i]);
+		}
+	}
+}
