@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int Soldiers = int.Parse(Console.ReadLine());
+		int[] Weapons = Console.ReadLine().Split().Select(int.Parse).ToArray();
+		
+		int Soldiers_EvenNoWeapons=0;
+		int Soldiers_OddNoWeapons=0;
+		for (int i = 0; i < Soldiers; i++)
+		{
+			if (Weapons[i] % 2 == 0)
+				Soldiers_EvenNoWeapons++;
+			else
+				Soldiers_OddNoWeapons++;			
+		}
+
+		if (Soldiers_EvenNoWeapons > Soldiers_OddNoWeapons)
+			Console.WriteLine("READY FOR BATTLE");
+		else
+			Console.WriteLine("NOT READY");
+	}
+}
