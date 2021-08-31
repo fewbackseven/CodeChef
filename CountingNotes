@@ -1,0 +1,33 @@
+using System;
+using System.Linq;
+using System.Numerics;
+
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int TestCases = int.Parse(Console.ReadLine());
+		int[] Notes = { 0, 1, 2,5, 10, 50, 100 };
+		int[] Final_Notes = new int[TestCases];
+
+		for (int i = 0; i < TestCases; i++)
+		{
+			int num = int.Parse(Console.ReadLine());
+
+			int result = 0;
+			int j = Notes.Length - 1;
+			while (j > 0)
+			{
+				result = Math.DivRem(num, Notes[j], out num);
+				Final_Notes[i] += result;
+				j--;
+			}
+		}
+
+		for (int i = 0; i < TestCases; i++)
+			Console.WriteLine(Final_Notes[i]);
+
+	}
+}
